@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Prompt user for file name and pattern
+echo "Enter the file name:"
+read filename
+echo "Enter the pattern to search for:"
+read pattern
+
+# Search file for pattern and print matching lines
+if grep -q "$pattern" "$filename"; then
+  echo "The following lines in $filename contain the pattern '$pattern':"
+  grep "$pattern" "$filename"
+else
+  echo "The pattern '$pattern' was not found in $filename"
+fi
